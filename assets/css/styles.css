@@ -13,3 +13,53 @@
 
 /* Universal department navigation and discovery */
 .department-chooser{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:16px}.department-chooser label{color:var(--muted);font-size:12px;font-weight:750}.department-chooser .form-control{width:min(100%,380px);min-height:42px;background:var(--surface)}.department-card{min-height:210px}.department-card .card-top .tag{white-space:nowrap}.tool-card:focus-visible,.nav-link:focus-visible,.btn:focus-visible,.filter-chip:focus-visible{outline:3px solid var(--accent);outline-offset:3px}@media(max-width:650px){.department-chooser{align-items:stretch;flex-direction:column}.department-chooser .form-control{width:100%}}
+
+/* OpenSTEM Ecosystem, Field Flagship, Discord and Contact integrations */
+.top-nav-link{display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:10px;font-size:12px;font-weight:620;border:1px solid var(--border);background:var(--bg);color:var(--text);transition:background .15s,border-color .15s,color .15s;text-decoration:none;white-space:nowrap}
+.top-nav-link:hover{background:var(--surface2);border-color:var(--accent);color:var(--accent)}
+.top-field-link{background:#087e8014;border-color:#087e8040;color:var(--accent);font-weight:700}
+:root[data-theme="dark"] .top-field-link{background:#60c9b918;border-color:#60c9b950;color:#6fe2cf}
+.field-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 2px #087e8030}
+.top-discord-link{color:#5865F2;border-color:#5865F235}
+.top-discord-link:hover{background:#5865F212;border-color:#5865F2;color:#5865F2}
+.top-contact-link{color:var(--text)}
+.top-icon-svg{flex-shrink:0;vertical-align:middle}
+.top-nav-arrow{color:var(--muted2);font-size:11px}
+.external-field-highlight{background:#143d46;color:#8bead7!important;border:1px solid #1f5f6b;font-weight:700}
+.external-field-highlight:hover{background:#1c5561!important;color:#c9fff3!important}
+.side-tag{font-size:8px;background:#257b84;color:#e5fff9;padding:1px 5px;border-radius:5px;font-weight:800;letter-spacing:.8px;margin-left:4px;text-transform:uppercase}
+.external-discord{color:#9cb3fc!important}
+.external-contact{color:#9fcad0!important}
+.field-showcase-banner{background:linear-gradient(125deg,#0d2833 0%,#133947 50%,#194a5a 100%);color:#fff;border-radius:20px;padding:clamp(24px,3.5vw,36px);margin:36px 0 20px;border:1px solid #285d6b;position:relative;overflow:hidden}
+.field-badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:1.8px;color:#8cead7;background:#194e58;padding:4px 10px;border-radius:20px;margin-bottom:14px}
+.field-showcase-content{display:grid;grid-template-columns:1fr minmax(220px,320px);gap:28px;align-items:center}
+.field-showcase-content h2{font-size:clamp(22px,2.5vw,30px);margin:4px 0 10px;color:#fff;letter-spacing:-.6px}
+.field-showcase-content p{color:#bdd5d8;font-size:13px;line-height:1.75;margin:0;max-width:600px}
+.field-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn-field{background:#6fe2cf;color:#0b2d35;font-weight:750}
+.btn-field:hover{background:#96ecd0}
+.btn-outline-light{background:#ffffff14;color:#fff;border:1px solid #ffffff30}
+.btn-outline-light:hover{background:#ffffff26;border-color:#ffffff50}
+.field-visual-badge{display:flex;flex-direction:column;gap:10px}
+.field-stat-box{background:#0e2f3d90;border:1px solid #235866;border-radius:12px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+.field-stat-box strong{font-size:20px;color:#6fe2cf}
+.field-stat-box span{font-size:11px;color:#a6c9cf}
+.eco-card-field{border-color:#087e8045;background:linear-gradient(135deg,var(--surface) 0%,var(--surface3) 100%)}
+.eco-title-row{display:flex;align-items:center;gap:7px}
+.tag-flagship{font-size:9px;background:var(--accent);color:#fff;padding:1px 6px;border-radius:6px;font-weight:800;letter-spacing:.5px}
+.community-strip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.community-cell{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;gap:15px;align-items:flex-start}
+.comm-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex-shrink:0}
+.comm-discord{background:#5865F215;color:#5865F2}
+.comm-mail{background:var(--accent-soft);color:var(--accent)}
+.community-cell strong{font-size:14px;display:block;margin-bottom:3px}
+.community-cell p{font-size:12px;color:var(--muted);line-height:1.6;margin:0 0 8px}
+.footer-left{display:flex;flex-direction:column;gap:4px}
+.footer-sub{color:var(--muted2);font-size:11px}
+.footer-links{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.footer-links a{color:var(--muted);transition:color .15s}
+.footer-links a:hover{color:var(--accent)}
+.footer-field-link{color:var(--accent)!important;font-weight:700}
+@media(max-width:1050px){.top-discord-link .top-nav-text,.top-contact-link .top-nav-text{display:none}.top-nav-link{padding:7px 9px}}
+@media(max-width:760px){.field-showcase-content{grid-template-columns:1fr}.field-visual-badge{flex-direction:row;flex-wrap:wrap}.field-stat-box{flex:1 1 120px}.community-strip{grid-template-columns:1fr}}
+@media(max-width:650px){.top-field-link .top-nav-arrow,.top-discord-link .top-nav-arrow,.top-contact-link .top-nav-arrow{display:none}.top-field-link{padding:6px 8px;font-size:11px}.footer-links{gap:10px}}
