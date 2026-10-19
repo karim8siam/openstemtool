@@ -1,0 +1,40 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {toolById} from '../assets/js/tools.js';
+test('DOM interaction harness: navigation, search, filters, recalculation, favorite, save, reset, exports, theme',async()=>{
+ const elements=new Map(),docEvents={},windowEvents={},storage=new Map(),downloads=[];
+ const get=id=>{if(!elements.has(id)){const events={};const el={id,innerHTML:'',textContent:'',value:'',dataset:{},style:{},disabled:false,
+ classList:{add(){},remove(){},toggle(){}},addEventListener:(name,fn)=>{events[name]=fn},trigger:(name,val)=>events[name]?.(val),
+ querySelectorAll(){return []},get elements(){const t=toolById[globalThis.location.hash.split('/').pop()];return t?Object.fromEntries(t.fields.map(f=>[f.key,{value:f.value}])):{};},focus(){},click(){},remove(){},set href(v){this._href=v},set download(v){this._download=v}};elements.set(id,el);}return elements.get(id)};
+ globalThis.document={querySelector:get,getElementById:id=>get('#'+id),documentElement:{dataset:{}},addEventListener:(name,fn)=>{docEvents[name]=fn},createElement:()=>{const anchor=get('anchor'+downloads.length);anchor.click=()=>downloads.push({name:anchor._download,href:anchor._href});return anchor;},body:{append(){}}};
+ globalThis.window={addEventListener:(name,fn)=>{windowEvents[name]=fn},scrollTo(){}};
+ globalThis.location={hash:'#/home',pathname:'/'};
+ globalThis.localStorage={getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)};
+ globalThis.confirm=()=>true;
+ if(!URL.createObjectURL)URL.createObjectURL=()=>'/fake-blob';
+ if(!URL.revokeObjectURL)URL.revokeObjectURL=()=>{};
+ await import('../assets/js/app.js');
+ assert.match(get('#content').innerHTML,/Your ideas deserve/);
+ get('#theme-toggle').trigger('click');assert.equal(document.documentElement.dataset.theme,'dark');
+ location.hash='#/catalog';windowEvents.hashchange();
+ assert.match(get('#content').innerHTML,/department-filter/);
+ assert.match(get('#content').innerHTML,/Scientific Graph Studio/);
+ get('#catalog-search').trigger('input',{target:{value:'titration'}});
+ assert.match(get('#catalog-results').innerHTML,/Titration/);
+ assert.doesNotMatch(get('#catalog-results').innerHTML,/Projectile Motion Visualizer/);
+ get('#catalog-search').trigger('input',{target:{value:''}});
+ get('#department-filter').trigger('change',{target:{value:'marine-ocean'}});
+ assert.match(get('#catalog-results').innerHTML,/Buoyancy|Wave Speed|Seawater/);
+ location.hash='#/departments';windowEvents.hashchange();assert.match(get('#content').innerHTML,/38 academic departments/);
+ location.hash='#/tool/ohms-law';windowEvents.hashchange();
+ assert.match(get('#result-status').innerHTML,/Calculation completed/);
+ assert.match(get('#tool-results').innerHTML,/Current/);
+ const clickAction=name=>docEvents.click({target:{closest:selector=>selector.includes('[data-action]')?{dataset:{action:name}}:null}});
+ clickAction('favorite');assert.ok(JSON.parse(storage.get('ost_favorites')).includes('ohms-law'));
+ clickAction('save');assert.equal(JSON.parse(storage.get('ost_projects')).length,1);
+ clickAction('reset');assert.match(get('#tool-results').innerHTML,/Current/);
+ clickAction('csv');clickAction('json');clickAction('report');
+ assert.equal(downloads.length,3);assert.ok(downloads.some(v=>v.name.endsWith('.csv')));assert.ok(downloads.some(v=>v.name.endsWith('.json')));assert.ok(downloads.some(v=>v.name.endsWith('.html')));
+ location.hash='#/projects';windowEvents.hashchange();assert.match(get('#content').innerHTML,/Saved projects/);
+ clickAction('export-projects');assert.ok(downloads.some(v=>v.name.includes('project-backup')));
+});

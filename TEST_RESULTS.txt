@@ -1,0 +1,32 @@
+OpenSTEMTool Universal v2.0 — Verification Report
+Generated 2026-10-20 (Asia/Dhaka)
+
+Source scope:
+- 155 distinct calculators and modeling/visualization tools
+- 135 new formula calculators plus original 20 advanced/data tools
+- 13 subject categories, 38 listed departments, 7 departments with zero dedicated tools
+- 155 static tool landing pages plus homepage
+
+Automated checks: 29 tests PASSED, 0 FAILED (node --test tests/*.test.js)
+- Registry uniqueness and category/department membership
+- Every default numeric calculation and available graph coordinate audited
+- Independent reference checks in mathematics, physics, statistics, chemistry, computing, engineering, public health, agriculture, economics and archaeology
+- Perturbed inputs in many tools and non-numeric input rejections
+- Invalid model domain examples
+- Crawable SEO page metadata and actual computed worked examples checked on all 155 pages
+- Simulated-DOM homepage, catalog, department filtering, interactive input, reset, save/favorite, theme and basic JSON/CSV/HTML export actions
+
+Sitemap production mode: PASS (generated during audit, and removed for distributable ZIP)
+- 156 unique absolute URLs (homepage + 155 tools)
+- Canonical URL and robots sitemap path matched the supplied audit origin
+- XML parser validation passed
+
+LIMITATIONS / NOT VERIFIED:
+- Headless Chromium browser navigation in this environment was blocked by administrator restrictions. Therefore the intended real-browser E2E test did NOT complete.
+- PNG/SVG export and mobile layout have code and static checks, but final real-browser visual interaction testing remains pending.
+- No real domain has been supplied; ZIP intentionally lacks a sitemap bound to an unowned hostname. Set SITE_URL to your deployed owned HTTPS domain and run npm run build.
+- Search Console submission / indexing / ranking not executed and cannot be guaranteed.
+- Educational calculations not externally peer-reviewed nor certified for medical, legal or engineering professional use.
+
+Run: npm run build && npm test
+Manual release gate: docs/MANUAL_QA_CHECKLIST.md

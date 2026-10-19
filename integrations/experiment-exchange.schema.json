@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openstemtool.example/schemas/experiment-exchange-1.0.json",
+  "title": "OpenSTEM Scientific Experiment Exchange (proposed contract)",
+  "type": "object",
+  "required": ["schemaVersion", "source", "experimentId", "dataOrigin", "columns", "rows"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "source": {"type": "string", "minLength": 1},
+    "experimentId": {"type": "string", "minLength": 1},
+    "dataOrigin": {"enum": ["simulated", "physical", "synthetic"]},
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "analysisTemplate": {"type": "string"},
+    "columns": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "required": ["key", "unit"],
+        "properties": {"key": {"type": "string"}, "unit": {"type": "string"}, "description": {"type": "string"}},
+        "additionalProperties": false
+      }
+    },
+    "rows": {
+      "type": "array",
+      "maxItems": 50000,
+      "items": {"type": "array", "items": {"type": ["number", "null"]}}
+    },
+    "notes": {"type": "string"}
+  }
+}

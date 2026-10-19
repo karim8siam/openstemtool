@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0",
+  "source": "openstemlab-sample",
+  "experimentId": "physics-simple-pendulum",
+  "dataOrigin": "synthetic",
+  "generatedAt": "2026-10-20T00:00:00Z",
+  "analysisTemplate": "pendulum-gravity-v1",
+  "columns": [
+    {"key": "length", "unit": "m", "description": "Pendulum length"},
+    {"key": "period", "unit": "s", "description": "Measured period (synthetic sample)"}
+  ],
+  "rows": [[0.4,1.269],[0.5,1.419],[0.6,1.552],[0.7,1.680],[0.8,1.798],[0.9,1.905],[1.0,2.009]],
+  "notes": "Example synthetic data only. This JSON contract is supplied for FUTURE integration; current V1 transfers laboratory data by CSV."
+}
