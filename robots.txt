@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+# Canonical XML Sitemap for Google Search Console & Search Engines
+Sitemap: https://openstemtool.org/sitemap.xml

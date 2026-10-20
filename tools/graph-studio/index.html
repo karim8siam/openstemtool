@@ -5,13 +5,24 @@
   <base href="/">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#10232e">
-  <meta name="description" content="Create scatter and line plots, apply axis labels and units, compare measurement series, and export your visualization. Free university-level calculator with editable">
-  <title>Scientific Graph Studio – Free Interactive Data &amp; Research Tool | OpenSTEMTool</title>
+  <meta name="description" content="Free online scientific graph studio calculator: compute create publication-friendly charts from measurements with editable variables, step-by-step formula and i">
+  <title>Scientific Graph Studio – Free Online Data &amp; Research Tool | OpenSTEMTool</title>
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
   <link rel="stylesheet" href="assets/css/styles.css?v=2.2">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:type" content="website"><meta property="og:title" content="Scientific Graph Studio – Free Interactive Data &amp; Research Tool | OpenSTEMTool"><meta property="og:description" content="Create scatter and line plots, apply axis labels and units, compare measurement series, and export your visualization. Free university-level calculator with editable parameters, fo"><meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"WebApplication","name":"Scientific Graph Studio","description":"Create scatter and line plots, apply axis labels and units, compare measurement series, and export your visualization.","applicationCategory":"EducationalApplication","operatingSystem":"Any","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OpenSTEMTool","item":"/"},{"@type":"ListItem","position":2,"name":"Scientific Graph Studio","item":"/tools/graph-studio/"}]}]}</script>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:site_name" content="OpenSTEMTool">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Scientific Graph Studio – Free Online Data &amp; Research Tool | OpenSTEMTool">
+<meta property="og:description" content="Free online scientific graph studio calculator: compute create publication-friendly charts from measurements with editable variables, step-by-step formula and i">
+<meta property="og:image" content="https://openstemtool.org/assets/icon.svg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scientific Graph Studio – Free Online Data &amp; Research Tool | OpenSTEMTool">
+<meta name="twitter:description" content="Free online scientific graph studio calculator: compute create publication-friendly charts from measurements with editable variables, step-by-step formula and i">
+<meta name="twitter:image" content="https://openstemtool.org/assets/icon.svg">
+<link rel="canonical" href="https://openstemtool.org/tools/graph-studio/">
+<meta property="og:url" content="https://openstemtool.org/tools/graph-studio/">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"WebApplication","name":"Scientific Graph Studio","description":"Create scatter and line plots, apply axis labels and units, compare measurement series, and export your visualization.","applicationCategory":"EducationalApplication","operatingSystem":"Any","isAccessibleForFree":true,"browserRequirements":"Requires JavaScript. Requires HTML5.","softwareVersion":"2.0","url":"https://openstemtool.org/tools/graph-studio/","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"OpenSTEM Ecosystem","url":"https://openstemfield.org/"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"OpenSTEMTool","item":"https://openstemtool.org/"},{"@type":"ListItem","position":2,"name":"Data \u0026 Research","item":"https://openstemtool.org/#/category/data"},{"@type":"ListItem","position":3,"name":"Scientific Graph Studio","item":"https://openstemtool.org/tools/graph-studio/"}]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does the Scientific Graph Studio calculator work?","acceptedAnswer":{"@type":"Answer","text":"The calculator computes results locally in your browser using the established mathematical model: Raw data visualization; no regression assumptions are applied."}},{"@type":"Question","name":"What are the input parameters for Scientific Graph Studio?","acceptedAnswer":{"@type":"Answer","text":"The required parameters include: X Y data pairs (dimensionless), Graph style (dimensionless), Horizontal scale (dimensionless), Vertical scale (dimensionless), Optional Y error bar values (dimensionless), Horizontal axis label (dimensionless), Vertical axis label (dimensionless)."}},{"@type":"Question","name":"What assumptions apply to this Scientific Graph Studio model?","acceptedAnswer":{"@type":"Answer","text":"Graphs are not evidence of causation. Check axis units and measurement provenance.. Error bars represent the user-entered Y standard uncertainties; they are not confidence intervals."}},{"@type":"Question","name":"Can I export results from this calculator?","acceptedAnswer":{"@type":"Answer","text":"Yes. OpenSTEMTool supports exporting publication-ready SVG charts, PNG graphics, raw CSV data tables, JSON parameter archives, and printable HTML/PDF scientific reports."}}]}]}</script>
 </head>
 <body>
   <div id="app" class="app">
@@ -47,22 +58,75 @@
         </div>
       </header>
       <main id="content" class="content" tabindex="-1"><article class="seo-fallback">
- <p class="eyebrow">OpenSTEMTool / Data &amp; Research / Statistics &amp; Probability</p>
- <h1>Scientific Graph Studio – Free Online Scientific Calculator</h1>
- <p>Create scatter and line plots, apply axis labels and units, compare measurement series, and export your visualization.</p><p><strong>Interactive and free:</strong> change the example inputs, calculate results in your browser, and export the numerical result or a graph when available. This application requires JavaScript.</p>
- <h2>What this tool calculates</h2><p>Create publication-friendly charts from measurements. The calculation is performed locally with the model documented below. Use it to explore relationships between scientific quantities and to check your own classroom calculations.</p>
- <h2>Calculation method and underlying formula</h2><p>Raw data visualization; no regression assumptions are applied.</p>
- <h2>Worked example: default input values</h2><p>The default worked example uses the following editable inputs. Change any input after the application loads to recalculate the output rather than relying on this example for your own problem.</p>
- <div class="table-scroll"><table class="data-table"><thead><tr><th>Input</th><th>Example value</th><th>Unit</th></tr></thead><tbody><tr><th scope="row">X Y data pairs</th><td>0.4 1.61
+  <nav class="seo-breadcrumb" aria-label="Breadcrumb">
+    <ol style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted)">
+      <li><a href="/" style="color:var(--accent);text-decoration:none">OpenSTEMTool</a> <span aria-hidden="true">/</span></li>
+      <li><a href="/#/category/data" style="color:var(--accent);text-decoration:none">Data &amp; Research</a> <span aria-hidden="true">/</span></li>
+      <li><a href="/#/department/statistics-probability" style="color:var(--accent);text-decoration:none">Statistics &amp; Probability</a> <span aria-hidden="true">/</span></li>
+      <li aria-current="page" style="color:var(--text-color)">Scientific Graph Studio</li>
+    </ol>
+  </nav>
+
+  <p class="eyebrow">OpenSTEMTool / Data &amp; Research / Statistics &amp; Probability</p>
+  <h1>Scientific Graph Studio – Free Online Scientific Calculator</h1>
+  <p class="page-lead">Create scatter and line plots, apply axis labels and units, compare measurement series, and export your visualization.</p>
+  <p><strong>Interactive &amp; 100% Free:</strong> Enter your values directly in the calculator above or change the default inputs below to compute outputs instantly in your browser. All computations run locally for immediate privacy and high performance.</p>
+
+  <h2>What this tool calculates</h2>
+  <p>Create publication-friendly charts from measurements. This computational model is built for university students, educators, lab researchers, and practicing engineers who need transparent, verified scientific calculations.</p>
+
+  <h2>Calculation method and underlying formula</h2>
+  <div style="background:var(--surface2);border:1px solid var(--border);border-left:4px solid var(--accent);padding:14px 18px;border-radius:8px;margin:16px 0">
+    <p style="margin:0;font-weight:600;color:var(--text-color)">Raw data visualization; no regression assumptions are applied.</p>
+  </div>
+  <p>The calculation evaluates relationships between input variables according to standard scientific principles. Inspect the editable parameter table below to test specific values.</p>
+
+  <h2>Worked example: default input values</h2>
+  <p>The default worked example demonstrates calculation with the following parameters. You can modify any value in the interactive panel to re-evaluate your specific scenario:</p>
+  <div class="table-scroll"><table class="data-table"><thead><tr><th>Parameter</th><th>Example value</th><th>Unit</th></tr></thead><tbody><tr><th scope="row">X Y data pairs</th><td>0.4 1.61
 0.6 2.42
 0.8 3.22
 1.0 4.03
 1.2 4.84</td><td>—</td></tr><tr><th scope="row">Graph style</th><td>both</td><td>—</td></tr><tr><th scope="row">Horizontal scale</th><td>linear</td><td>—</td></tr><tr><th scope="row">Vertical scale</th><td>linear</td><td>—</td></tr><tr><th scope="row">Optional Y error bar values</th><td></td><td>—</td></tr><tr><th scope="row">Horizontal axis label</th><td>Length L (m)</td><td>—</td></tr><tr><th scope="row">Vertical axis label</th><td>Period² T² (s²)</td><td>—</td></tr></tbody></table></div>
- <h2>Worked example results</h2><div class="table-scroll"><table class="data-table"><thead><tr><th>Quantity</th><th>Calculated result</th><th>Unit</th></tr></thead><tbody><tr><th scope="row">Data points</th><td>5</td><td>—</td></tr><tr><th scope="row">X minimum</th><td>0.4</td><td>—</td></tr><tr><th scope="row">X maximum</th><td>1.2</td><td>—</td></tr></tbody></table></div>
- <h2>Assumptions and interpretation</h2><ul><li>Graphs are not evidence of causation. Check axis units and measurement provenance.</li><li>Error bars represent the user-entered Y standard uncertainties; they are not confidence intervals.</li></ul><p>Educational calculations are not substitutes for professional verification, clinical assessment, engineering design approval, or published scientific quality assurance. Always inspect units, domains and model suitability.</p>
- <h2>Other useful Data &amp; Research tools</h2><ul><li><a href="/tools/csv-explorer/">CSV Data Explorer</a></li><li><a href="/tools/regression/">Regression &amp; Curve Fitting</a></li><li><a href="/tools/uncertainty/">Uncertainty Propagation</a></li><li><a href="/tools/statistics/">Descriptive Statistics</a></li><li><a href="/tools/report-builder/">Scientific Report Builder</a></li></ul>
- <h2>Explore the OpenSTEM ecosystem</h2><p><strong><a href="https://openstemfield.org/">OpenSTEM Field</a></strong> is the main ecosystem hub for university scholarships, graduate funding and research opportunities across 10 countries. <a href="https://openstemlibrary.com/">OpenSTEM Library</a> provides theory and textbook chapters. <a href="https://openstemlab.org/">OpenSTEM Lab</a> includes virtual experiments and laboratory datasets.</p><p><a href="https://discord.com/invite/tBBKtvFJzW">Join our Discord Community ↗</a> · <a href="mailto:shahriyarkarimsiam@gmail.com">Contact: shahriyarkarimsiam@gmail.com ✉</a></p>
- <p><a href="/">Browse all scientific tools</a> · <a href="/#/departments">Browse academic departments</a></p></article></main>
+
+  <h2>Worked example results</h2>
+  <p>Based on the default parameters entered above, the model computes the following quantities:</p>
+  <div class="table-scroll"><table class="data-table"><thead><tr><th>Calculated quantity</th><th>Output value</th><th>Unit</th></tr></thead><tbody><tr><th scope="row">Data points</th><td>5</td><td>—</td></tr><tr><th scope="row">X minimum</th><td>0.4</td><td>—</td></tr><tr><th scope="row">X maximum</th><td>1.2</td><td>—</td></tr></tbody></table></div>
+
+  <h2>Assumptions and interpretation</h2>
+  <ul><li>Graphs are not evidence of causation. Check axis units and measurement provenance.</li><li>Error bars represent the user-entered Y standard uncertainties; they are not confidence intervals.</li></ul>
+  <p>Educational calculations are not substitutes for professional engineering design approvals, certified laboratory assays, clinical diagnostics, or peer-reviewed scientific publications. Always inspect units, verify physical domains, and evaluate boundary conditions.</p>
+
+  <h2>Frequently asked questions (FAQ)</h2>
+  <section class="seo-faq">
+    <details style="margin:8px 0;padding:12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px">
+      <summary style="font-weight:700;cursor:pointer">How does the Scientific Graph Studio calculator work?</summary>
+      <p style="margin:8px 0 0">The calculator computes results locally in your browser using the established mathematical model: Raw data visualization; no regression assumptions are applied.</p>
+    </details>
+    <details style="margin:8px 0;padding:12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px">
+      <summary style="font-weight:700;cursor:pointer">What are the input parameters for Scientific Graph Studio?</summary>
+      <p style="margin:8px 0 0">The required parameters include: X Y data pairs (dimensionless), Graph style (dimensionless), Horizontal scale (dimensionless), Vertical scale (dimensionless), Optional Y error bar values (dimensionless), Horizontal axis label (dimensionless), Vertical axis label (dimensionless).</p>
+    </details>
+    <details style="margin:8px 0;padding:12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px">
+      <summary style="font-weight:700;cursor:pointer">What assumptions apply to this Scientific Graph Studio model?</summary>
+      <p style="margin:8px 0 0">Graphs are not evidence of causation. Check axis units and measurement provenance.. Error bars represent the user-entered Y standard uncertainties; they are not confidence intervals.</p>
+    </details>
+    <details style="margin:8px 0;padding:12px;background:var(--surface2);border:1px solid var(--border);border-radius:8px">
+      <summary style="font-weight:700;cursor:pointer">Can I export results from this calculator?</summary>
+      <p style="margin:8px 0 0">Yes. OpenSTEMTool supports exporting publication-ready SVG charts, PNG graphics, raw CSV data tables, JSON parameter archives, and printable HTML/PDF scientific reports.</p>
+    </details>
+  </section>
+
+  <h2>Other useful Data &amp; Research tools</h2>
+  <ul style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;padding:0;list-style:none">
+    <li><a href="/tools/csv-explorer/" class="btn btn-outline btn-small" style="display:block;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">→ CSV Data Explorer</a></li><li><a href="/tools/regression/" class="btn btn-outline btn-small" style="display:block;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">→ Regression &amp; Curve Fitting</a></li><li><a href="/tools/uncertainty/" class="btn btn-outline btn-small" style="display:block;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">→ Uncertainty Propagation</a></li><li><a href="/tools/statistics/" class="btn btn-outline btn-small" style="display:block;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">→ Descriptive Statistics</a></li><li><a href="/tools/report-builder/" class="btn btn-outline btn-small" style="display:block;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">→ Scientific Report Builder</a></li><li><a href="/tools/z-score/" class="btn btn-outline btn-small" style="display:block;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">→ Z-Score Calculator</a></li>
+  </ul>
+
+  <h2>Explore the OpenSTEM ecosystem</h2>
+  <p><strong><a href="https://openstemfield.org/" target="_blank" rel="noopener">OpenSTEM Field</a></strong> is the flagship ecosystem platform for university scholarships, graduate funding, and research opportunities across 10 countries. <a href="https://openstemlibrary.com/" target="_blank" rel="noopener">OpenSTEM Library</a> provides open textbooks and theory derivations. <a href="https://openstemlab.org/" target="_blank" rel="noopener">OpenSTEM Lab</a> provides 895+ virtual laboratory experiments.</p>
+  <p><a href="https://discord.com/invite/tBBKtvFJzW" target="_blank" rel="noopener">Join our Discord Community ↗</a> · <a href="mailto:shahriyarkarimsiam@gmail.com">Contact: shahriyarkarimsiam@gmail.com ✉</a></p>
+  <p><a href="/">Browse all scientific calculators</a> · <a href="/#/departments">Browse academic departments</a></p>
+</article></main>
       <footer class="footer">
         <div class="footer-left">
           <div class="footer-brand-row">
