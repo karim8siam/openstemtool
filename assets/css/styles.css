@@ -63,3 +63,15 @@
 @media(max-width:1050px){.top-discord-link .top-nav-text,.top-contact-link .top-nav-text{display:none}.top-nav-link{padding:7px 9px}}
 @media(max-width:760px){.field-showcase-content{grid-template-columns:1fr}.field-visual-badge{flex-direction:row;flex-wrap:wrap}.field-stat-box{flex:1 1 120px}.community-strip{grid-template-columns:1fr}}
 @media(max-width:650px){.top-field-link .top-nav-arrow,.top-discord-link .top-nav-arrow,.top-contact-link .top-nav-arrow{display:none}.top-field-link{padding:6px 8px;font-size:11px}.footer-links{gap:10px}}
+
+/* Logo branding all over the website */
+.brand-logo-img{width:42px;height:42px;border-radius:12px;flex-shrink:0;box-shadow:0 6px 18px rgba(7,36,43,.45);transition:transform .22s ease,box-shadow .22s ease}
+.brand:hover .brand-logo-img{transform:scale(1.06) rotate(-2deg);box-shadow:0 8px 24px rgba(111,226,207,.35)}
+.topbar-brand-link{display:none;align-items:center;margin-right:6px}
+.topbar-logo-img{width:28px;height:28px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.footer-brand-row{display:flex;align-items:center;gap:8px;font-weight:600}
+.footer-logo{width:18px;height:18px;border-radius:5px;flex-shrink:0}
+.hero-brand-pill{display:inline-flex;align-items:center;gap:9px;background:var(--surface2);border:1px solid var(--border);padding:4px 12px 4px 6px;border-radius:30px;margin-bottom:14px;box-shadow:0 2px 6px rgba(0,0,0,.03)}
+.hero-brand-pill img{width:22px;height:22px;border-radius:7px;flex-shrink:0}
+.hero-brand-pill span{font-size:11px;font-weight:750;letter-spacing:1px;color:var(--accent);text-transform:uppercase}
+@media(max-width:900px){.topbar-brand-link{display:inline-flex}}

@@ -16,7 +16,7 @@
 <body>
   <div id="app" class="app">
     <aside class="sidebar" id="sidebar" aria-label="Application sidebar">
-      <a class="brand" href="#/home" aria-label="OpenSTEMTool home"><span class="brand-icon">✳</span><span class="brand-name">openstem<span>tool</span><small>SCIENTIFIC WORKSPACE</small></span></a>
+      <a class="brand" href="#/home" aria-label="OpenSTEMTool home"><img class="brand-logo-img" src="assets/icon.svg" alt="OpenSTEMTool Logo" width="40" height="40"><span class="brand-name">openstem<span>tool</span><small>SCIENTIFIC WORKSPACE</small></span></a>
       <div id="sidebar-nav"></div>
       <div class="sidebar-bottom">
         <div class="side-caption">OPENSTEM ECOSYSTEM</div>
@@ -34,6 +34,7 @@
       <header class="topbar">
         <div class="topbar-left">
           <button id="menu-toggle" class="icon-button mobile-menu" type="button" aria-label="Toggle navigation"><span aria-hidden="true">☰</span></button>
+          <a href="#/home" class="topbar-brand-link" aria-label="OpenSTEMTool home"><img class="topbar-logo-img" src="assets/icon.svg" width="28" height="28" alt=""></a>
           <span class="topcrumb" id="breadcrumb">Overview <span class="crumb-divider">/</span> Workspace</span>
         </div>
         <div class="topbar-right">
@@ -60,7 +61,10 @@
  <p><a href="/">Browse all scientific tools</a> · <a href="/#/departments">Browse academic departments</a></p></article></main>
       <footer class="footer">
         <div class="footer-left">
-          <span>© <span id="year"></span> OpenSTEMTool · Free scientific computing workspace.</span>
+          <div class="footer-brand-row">
+            <img src="assets/icon.svg" width="18" height="18" alt="" class="footer-logo">
+            <span>© <span id="year"></span> OpenSTEMTool · Free scientific computing workspace.</span>
+          </div>
           <span class="footer-sub">Compute locally. Verify assumptions. Cite your methods.</span>
         </div>
         <div class="footer-links">
