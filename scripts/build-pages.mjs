@@ -174,7 +174,7 @@ for (const t of tools) {
   </ul>
 
   <h2>Explore the OpenSTEM ecosystem</h2>
-  <p><strong><a href="https://openstemfield.org/" target="_blank" rel="noopener">OpenSTEM Field</a></strong> is the flagship ecosystem platform for university scholarships, graduate funding, and research opportunities across 10 countries. <a href="https://openstemlibrary.com/" target="_blank" rel="noopener">OpenSTEM Library</a> provides open textbooks and theory derivations. <a href="https://openstemlab.org/" target="_blank" rel="noopener">OpenSTEM Lab</a> provides 895+ virtual laboratory experiments.</p>
+  <p><strong><a href="https://openstemfield.org/" target="_blank" rel="noopener">OpenSTEM Field</a></strong> is the flagship ecosystem platform for university scholarships, graduate funding, and research opportunities across 10 countries. <a href="https://openstemreplicate.org/" target="_blank" rel="noopener">OpenSTEM Research</a> curates peer-reviewed paper highlights and scientific replications. <a href="https://openstemlibrary.com/" target="_blank" rel="noopener">OpenSTEM Library</a> provides open textbooks and theory derivations. <a href="https://openstemlab.org/" target="_blank" rel="noopener">OpenSTEM Lab</a> provides 895+ virtual laboratory experiments.</p>
   <p><a href="https://discord.com/invite/tBBKtvFJzW" target="_blank" rel="noopener">Join our Discord Community ↗</a> · <a href="mailto:shahriyarkarimsiam@gmail.com">Contact: shahriyarkarimsiam@gmail.com ✉</a></p>
   <p><a href="/">Browse all scientific calculators</a> · <a href="/#/departments">Browse academic departments</a></p>
 </article></main>`;
@@ -334,6 +334,7 @@ const homepage = `<main id="content" class="content" tabindex="-1"><section clas
 ${links}
 <h2>The OpenSTEM Ecosystem</h2>
 <p><strong><a href="https://openstemfield.org/">OpenSTEM Field</a></strong> (Flagship Hub) — Discover university scholarships, graduate programs, and research funding across 10 countries with official source links.</p>
+<p><strong><a href="https://openstemreplicate.org/">OpenSTEM Research</a></strong> — Curated STEM research editorial, peer-reviewed paper highlights, and study replications.</p>
 <p><strong><a href="https://openstemlab.org/">OpenSTEM Lab</a></strong> — 895+ virtual laboratory experiments and simulations.</p>
 <p><strong><a href="https://openstemlibrary.com/">OpenSTEM Library</a></strong> — Open-access digital university textbooks and scientific theory.</p>
 <h2>Community &amp; Contact</h2>
@@ -361,6 +362,7 @@ const homepageSchema = {
       logo: `${site}/assets/icon.svg`,
       sameAs: [
         'https://openstemfield.org/',
+        'https://openstemreplicate.org/',
         'https://openstemlab.org/',
         'https://openstemlibrary.com/',
         'https://discord.com/invite/tBBKtvFJzW'

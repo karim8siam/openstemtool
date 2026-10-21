@@ -19,6 +19,7 @@ OpenSTEMTool is an open, offline-first scientific workspace engineered for unive
 OpenSTEMTool operates as part of the broader **OpenSTEM** open-science initiative:
 
 * 🏛️ **[OpenSTEM Field](https://openstemfield.org/)** — **Flagship Ecosystem Hub**: Global directory of scientific research programs, graduate scholarships, and university fellowships.
+* ◈ **[OpenSTEM Research & Replicate](https://openstemreplicate.org/)** — Curated STEM research editorial, peer-reviewed paper highlights, and study replications.
 * 🔬 **[OpenSTEM Lab](https://openstemlab.org/)** — Virtual scientific simulations, interactive lab experiments, and hands-on modules.
 * 📚 **[OpenSTEM Library](https://openstemlibrary.com/)** — Open university textbooks, academic monographs, and fundamental scientific theory.
 * 💬 **[Discord Community](https://discord.com/invite/tBBKtvFJzW)** — Connect with STEM students, researchers, and contributors.
