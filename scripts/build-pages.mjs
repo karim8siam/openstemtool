@@ -3,7 +3,7 @@
  * Builds high-ranking, crawlable static HTML for all 155 scientific calculators.
  * Produces valid sitemap.xml, robots.txt, canonical URLs, and rich Schema.org markup.
  */
-import {readFile,writeFile,mkdir,rm} from 'node:fs/promises';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {tools,departments,categories} from '../assets/js/tools.js';
 
@@ -38,10 +38,16 @@ function applyHead(html, title, description, url = '', jsonld = null) {
     `<meta property="og:title" content="${escape(title)}">`,
     `<meta property="og:description" content="${escape(description.slice(0, 160))}">`,
     `<meta property="og:image" content="${escape(site)}/assets/icon.svg">`,
+    `<meta property="og:image:type" content="image/svg+xml">`,
+    `<meta property="og:image:width" content="512">`,
+    `<meta property="og:image:height" content="512">`,
+    `<meta property="og:image:alt" content="${escape(title)}">`,
     `<meta name="twitter:card" content="summary">`,
+    `<meta name="twitter:site" content="@openstem">`,
     `<meta name="twitter:title" content="${escape(title)}">`,
     `<meta name="twitter:description" content="${escape(description.slice(0, 160))}">`,
-    `<meta name="twitter:image" content="${escape(site)}/assets/icon.svg">`
+    `<meta name="twitter:image" content="${escape(site)}/assets/icon.svg">`,
+    `<meta name="twitter:image:alt" content="${escape(title)}">`
   ];
 
   if (process.env.GOOGLE_SITE_VERIFICATION) {
@@ -72,12 +78,12 @@ const toolDirs = [];
 for (const t of tools) {
   const result = readExample(t);
   
-  // High CTR title optimized for search intent: "Projectile Motion Calculator – Free Online Physics Tool | OpenSTEMTool"
+  // High CTR title optimized for search intent: "Projectile Motion Visualizer Calculator – Formula & Solver | OpenSTEMTool"
   const isCalc = /(calculator|studio|grapher|solver|converter|explorer)/i.test(t.title);
-  const title = `${t.title}${isCalc ? '' : ' Calculator'} – Free Online ${catName(t.category)} Tool | OpenSTEMTool`;
+  const title = `${t.title}${isCalc ? '' : ' Calculator'} – Formula & Solver | OpenSTEMTool`;
   
   // High-converting meta description: 140-160 chars with action keywords and model specifics
-  const desc = `Free online ${t.title.toLowerCase()} calculator: compute ${t.subtitle.toLowerCase()} with editable variables, step-by-step formula and interactive results.`;
+  const desc = `Free online ${t.title.toLowerCase()} calculator: compute ${t.subtitle.toLowerCase()} with editable parameters, step-by-step formula and interactive chart export.`;
 
   const related = tools.filter(o => o.category === t.category && o.id !== t.id).slice(0, 6);
   const inputRows = t.fields.map(f => `<tr><th scope="row">${escape(f.label)}</th><td>${escape(f.value)}</td><td>${escape(f.unit || '—')}</td></tr>`).join('');
@@ -123,6 +129,13 @@ for (const t of tools) {
   </div>
   <p>The calculation evaluates relationships between input variables according to standard scientific principles. Inspect the editable parameter table below to test specific values.</p>
 
+  <h2>Step-by-step calculation guide</h2>
+  <ol style="padding-left:20px;line-height:1.8;color:var(--muted)">
+    <li><strong>Input Parameters:</strong> Enter the required values into the parameter table below.</li>
+    <li><strong>Model Evaluation:</strong> The system automatically evaluates the governing equations locally with high numerical precision.</li>
+    <li><strong>Analyze &amp; Export:</strong> Review the calculated outputs, inspect the generated curve plot, and download publication-ready reports or CSV data.</li>
+  </ol>
+
   <h2>Worked example: default input values</h2>
   <p>The default worked example demonstrates calculation with the following parameters. You can modify any value in the interactive panel to re-evaluate your specific scenario:</p>
   <div class="table-scroll"><table class="data-table"><thead><tr><th>Parameter</th><th>Example value</th><th>Unit</th></tr></thead><tbody>${inputRows}</tbody></table></div>
@@ -166,27 +179,44 @@ for (const t of tools) {
   <p><a href="/">Browse all scientific calculators</a> · <a href="/#/departments">Browse academic departments</a></p>
 </article></main>`;
 
-  // Google Schema.org Multi-Type Graph: WebApplication, BreadcrumbList, and FAQPage
+  // Google Schema.org Multi-Type Graph: WebApplication, BreadcrumbList, FAQPage, HowTo
   const structured = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: t.title,
+    headline: `${t.title} – Free Online Scientific Calculator`,
     description: t.description,
     applicationCategory: 'EducationalApplication',
     operatingSystem: 'Any',
     isAccessibleForFree: true,
     browserRequirements: 'Requires JavaScript. Requires HTML5.',
-    softwareVersion: '2.0',
+    softwareVersion: '2.0.0',
     url: url,
     offers: {
       '@type': 'Offer',
       price: '0',
       priceCurrency: 'USD'
     },
+    featureList: [
+      'Interactive formula computation',
+      'Step-by-step mathematical derivation',
+      'Publication-ready SVG and PNG chart generation',
+      'Instant CSV and JSON data export',
+      'Local offline-first execution with zero tracking'
+    ],
     author: {
       '@type': 'Organization',
       name: 'OpenSTEM Ecosystem',
       url: 'https://openstemfield.org/'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'OpenSTEM',
+      url: 'https://openstemfield.org/',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${site}/assets/icon.svg`
+      }
     }
   };
 
@@ -254,9 +284,36 @@ for (const t of tools) {
     ]
   };
 
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Calculate with the ${t.title} Calculator`,
+    description: `Step-by-step procedure to calculate ${t.subtitle.toLowerCase()} with formula evaluation.`,
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: 'Input Initial Parameters',
+        text: `Enter the required variables: ${t.fields.map(f => `${f.label} (${f.unit || 'unitless'})`).join(', ')}.`,
+        position: 1
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Compute Governing Formula',
+        text: `The calculator evaluates the model: ${result.method || 'evaluates inputs numerically'}.`,
+        position: 2
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Inspect Outputs and Charts',
+        text: 'Review the calculated metrics, analyze the sensitivity curve, and export results in CSV, SVG, PNG, JSON, or printable PDF format.',
+        position: 3
+      }
+    ]
+  };
+
   const page = applyHead(template.replace(introMarker, html), title, desc, url, {
     '@context': 'https://schema.org',
-    '@graph': [structured, breadcrumbs, faqSchema]
+    '@graph': [structured, breadcrumbs, faqSchema, howToSchema]
   });
 
   const folder = resolve(root, 'tools', t.id);
@@ -330,7 +387,9 @@ const urls = [
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 ${urls.map(u => `  <url>
     <loc>${escape(u.loc)}</loc>
     <lastmod>${today}</lastmod>
