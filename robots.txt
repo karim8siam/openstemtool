@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /cdn-cgi/
 
 # Canonical XML Sitemap for Google Search Console & Search Engines
 Sitemap: https://openstemtool.org/sitemap.xml

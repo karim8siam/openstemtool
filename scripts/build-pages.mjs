@@ -175,7 +175,7 @@ for (const t of tools) {
 
   <h2>Explore the OpenSTEM ecosystem</h2>
   <p><strong><a href="https://openstemfield.org/" target="_blank" rel="noopener">OpenSTEM Field</a></strong> is the flagship ecosystem platform for university scholarships, graduate funding, and research opportunities across 10 countries. <a href="https://openstemreplicate.org/" target="_blank" rel="noopener">OpenSTEM Research</a> curates peer-reviewed paper highlights and scientific replications. <a href="https://openstemlibrary.com/" target="_blank" rel="noopener">OpenSTEM Library</a> provides open textbooks and theory derivations. <a href="https://openstemlab.org/" target="_blank" rel="noopener">OpenSTEM Lab</a> provides 895+ virtual laboratory experiments.</p>
-  <p><a href="https://discord.com/invite/tBBKtvFJzW" target="_blank" rel="noopener">Join our Discord Community ↗</a> · <a href="mailto:shahriyarkarimsiam@gmail.com">Contact: shahriyarkarimsiam@gmail.com ✉</a></p>
+  <p><a href="https://discord.com/invite/tBBKtvFJzW" target="_blank" rel="noopener">Join our Discord Community ↗</a> · <!--email_off--><a href="mailto:shahriyarkarimsiam@gmail.com">Contact: shahriyarkarimsiam@gmail.com ✉</a><!--/email_off--></p>
   <p><a href="/">Browse all scientific calculators</a> · <a href="/#/departments">Browse academic departments</a></p>
 </article></main>`;
 
@@ -338,7 +338,7 @@ ${links}
 <p><strong><a href="https://openstemlab.org/">OpenSTEM Lab</a></strong> — 895+ virtual laboratory experiments and simulations.</p>
 <p><strong><a href="https://openstemlibrary.com/">OpenSTEM Library</a></strong> — Open-access digital university textbooks and scientific theory.</p>
 <h2>Community &amp; Contact</h2>
-<p><a href="https://discord.com/invite/tBBKtvFJzW">OpenSTEM Discord Server ↗</a> · <a href="mailto:shahriyarkarimsiam@gmail.com">Direct Email: shahriyarkarimsiam@gmail.com ✉</a></p>
+<p><a href="https://discord.com/invite/tBBKtvFJzW">OpenSTEM Discord Server ↗</a> · <!--email_off--><a href="mailto:shahriyarkarimsiam@gmail.com">Direct Email: shahriyarkarimsiam@gmail.com ✉</a><!--/email_off--></p>
 </section></main>`;
 
 const homepageSchema = {
@@ -406,6 +406,7 @@ await writeFile(resolve(root, 'sitemap.xml'), xml);
 // Strict Google-Standard Robots.txt
 const robotsTxt = `User-agent: *
 Allow: /
+Disallow: /cdn-cgi/
 
 # Canonical XML Sitemap for Google Search Console & Search Engines
 Sitemap: ${site}/sitemap.xml
