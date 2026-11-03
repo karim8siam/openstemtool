@@ -22,6 +22,8 @@ OpenSTEMTool operates as part of the broader **OpenSTEM** open-science initiativ
 * ◈ **[OpenSTEM Research & Replicate](https://openstemreplicate.org/)** — Curated STEM research editorial, peer-reviewed paper highlights, and study replications.
 * 🔬 **[OpenSTEM Lab](https://openstemlab.org/)** — Virtual scientific simulations, interactive lab experiments, and hands-on modules.
 * 📚 **[OpenSTEM Library](https://openstemlibrary.com/)** — Open university textbooks, academic monographs, and fundamental scientific theory.
+* 🎓 **[OpenSTEM Recruitment](https://openstemrecruitment.com/)** — International study pathways, university applications, and student academic guidance.
+* ☍ **[OpenSTEM Bridge](https://www.openstembridge.space/)** — Connect student talent with active scientific research labs, project calls, and mentorship.
 * 💬 **[Discord Community](https://discord.com/invite/tBBKtvFJzW)** — Connect with STEM students, researchers, and contributors.
 * ✉️ **Direct Contact**: [`shahriyarkarimsiam@gmail.com`](mailto:shahriyarkarimsiam@gmail.com)
 

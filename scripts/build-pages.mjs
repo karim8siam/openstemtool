@@ -174,7 +174,7 @@ for (const t of tools) {
   </ul>
 
   <h2>Explore the OpenSTEM ecosystem</h2>
-  <p><strong><a href="https://openstemfield.org/" target="_blank" rel="noopener">OpenSTEM Field</a></strong> is the flagship ecosystem platform for university scholarships, graduate funding, and research opportunities across 10 countries. <a href="https://openstemreplicate.org/" target="_blank" rel="noopener">OpenSTEM Research</a> curates peer-reviewed paper highlights and scientific replications. <a href="https://openstemlibrary.com/" target="_blank" rel="noopener">OpenSTEM Library</a> provides open textbooks and theory derivations. <a href="https://openstemlab.org/" target="_blank" rel="noopener">OpenSTEM Lab</a> provides 895+ virtual laboratory experiments.</p>
+  <p><strong><a href="https://openstemfield.org/" target="_blank" rel="noopener">OpenSTEM Field</a></strong> is the flagship ecosystem platform for university scholarships, graduate funding, and research opportunities across 10 countries. <a href="https://openstemreplicate.org/" target="_blank" rel="noopener">OpenSTEM Research</a> curates peer-reviewed paper highlights and scientific replications. <a href="https://openstemlab.org/" target="_blank" rel="noopener">OpenSTEM Lab</a> provides 895+ virtual laboratory experiments. <a href="https://openstemlibrary.com/" target="_blank" rel="noopener">OpenSTEM Library</a> provides open textbooks and theory derivations. <a href="https://openstemrecruitment.com/" target="_blank" rel="noopener">OpenSTEM Recruitment</a> guides international university study pathways, and <a href="https://www.openstembridge.space/" target="_blank" rel="noopener">OpenSTEM Bridge</a> connects emerging researchers with active labs and mentors.</p>
   <p><a href="https://discord.com/invite/tBBKtvFJzW" target="_blank" rel="noopener">Join our Discord Community ↗</a> · <!--email_off--><a href="mailto:shahriyarkarimsiam@gmail.com">Contact: shahriyarkarimsiam@gmail.com ✉</a><!--/email_off--></p>
   <p><a href="/">Browse all scientific calculators</a> · <a href="/#/departments">Browse academic departments</a></p>
 </article></main>`;
@@ -337,6 +337,8 @@ ${links}
 <p><strong><a href="https://openstemreplicate.org/">OpenSTEM Research</a></strong> — Curated STEM research editorial, peer-reviewed paper highlights, and study replications.</p>
 <p><strong><a href="https://openstemlab.org/">OpenSTEM Lab</a></strong> — 895+ virtual laboratory experiments and simulations.</p>
 <p><strong><a href="https://openstemlibrary.com/">OpenSTEM Library</a></strong> — Open-access digital university textbooks and scientific theory.</p>
+<p><strong><a href="https://openstemrecruitment.com/">OpenSTEM Recruitment</a></strong> — International study pathways, university applications, and academic guidance.</p>
+<p><strong><a href="https://www.openstembridge.space/">OpenSTEM Bridge</a></strong> — Connect student talent with active research labs, research calls, and mentorship.</p>
 <h2>Community &amp; Contact</h2>
 <p><a href="https://discord.com/invite/tBBKtvFJzW">OpenSTEM Discord Server ↗</a> · <!--email_off--><a href="mailto:shahriyarkarimsiam@gmail.com">Direct Email: shahriyarkarimsiam@gmail.com ✉</a><!--/email_off--></p>
 </section></main>`;
@@ -365,6 +367,8 @@ const homepageSchema = {
         'https://openstemreplicate.org/',
         'https://openstemlab.org/',
         'https://openstemlibrary.com/',
+        'https://openstemrecruitment.com/',
+        'https://www.openstembridge.space/',
         'https://discord.com/invite/tBBKtvFJzW'
       ]
     }
